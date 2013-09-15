@@ -20,7 +20,8 @@ extra_compile_args = ['-w', '-O2']
 
 ext_modules = [Extension('dirichlet_conrey', sources=['dirichlet_conrey.pyx', ],
                      library_dirs=[SAGE_LOCAL + '/lib/'],
-                     include_dirs=[SAGE_ROOT + '/devel/sage/sage/ext'],
+                     include_dirs=[SAGE_ROOT + '/devel/sage/sage/ext',
+                                   SAGE_ROOT + "/src/sage/ext/"],
                      libraries=['csage'],
                      extra_compile_args = extra_compile_args,
                      extra_link_args = extra_link_args)]
@@ -33,6 +34,7 @@ include_dirs = [SAGE_ROOT + "/local/include/csage/",
                 SAGE_ROOT + "/devel/sage/sage/ext/",
                 SAGE_ROOT + "/devel/sage/",
                 SAGE_ROOT + '/devel/sage/sage/gsl/',
+
                 ]
 
 setup(name='DirichletConrey',
